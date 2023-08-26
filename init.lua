@@ -133,10 +133,11 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
+    "ellisonleao/gruvbox.nvim", priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.o.background = "dark" -- or "light" for light mode
+      vim.cmd([[colorscheme gruvbox]])
+      vim.cmd([[highlight Normal ctermbg=Green guibg=#001000]])
     end,
   },
 
@@ -160,7 +161,6 @@ require('lazy').setup({
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
-      char = '┊',
       show_trailing_blankline_indent = false,
     },
   },
