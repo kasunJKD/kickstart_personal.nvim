@@ -144,11 +144,48 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    "ellisonleao/gruvbox.nvim", priority = 1000,
+    "kaiuri/nvim-juliana", priority = 1000,
     config = function()
       vim.o.background = "dark" -- or "light" for light mode
-      vim.cmd([[colorscheme gruvbox]])
+      vim.cmd([[colorscheme juliana]])
       vim.cmd([[highlight Normal ctermbg=Green guibg=#001900]])
+      vim.cmd([[highlight LineNr term=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE]])
+      vim.cmd([[highlight SignColumn ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE]])
+      vim.cmd([[highlight Normal guifg=#82827A ctermfg=235]])
+      vim.cmd([[highlight goStatement guifg=#82827A ctermfg=235]])
+
+        -- Override theme colors
+  local theme_colors = {
+    fg1          = '#ffffff',
+    fg2          = '#d8dee9',
+    fg3          = '#a6acb9',
+    fg4          = '#46525c',
+    bg1          = '#444e59',
+    selection_bg = '#3f4750',
+    bg2          = '#303841',
+    bg3          = '#2e353e',
+    diff_text    = '#373f48',
+    diff_add     = '#41525a',
+    diff_change  = '#585249',
+    diff_remove  = '#4f434a',
+    text_fg      = '#d9d9d9',
+    yellow1      = '#755e2f',
+    yellow2      = '#946835',
+    yellow3      = '#784b18',
+    green        = '#6e916a',
+    magenta      = '#c695c6',
+    orange       = '#874633',
+    red1         = '#c76b70',
+    red2         = '#ec5f66',
+    blue1        = '#95b2d6',
+    blue2        = '#5c99d6',
+    cyan1        = '#87c7c7',
+    cyan2        = '#5fb4b4',
+  }
+
+  for key, value in pairs(theme_colors) do
+    vim.cmd(string.format("highlight %s guifg=%s ctermfg=%s", key, value, 235))
+  end
     end,
   },
 
