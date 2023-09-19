@@ -137,7 +137,7 @@ require('lazy').setup({
     config = function()
       vim.o.background = "dark" -- or "light" for light mode
       vim.cmd([[colorscheme gruvbox]])
-      vim.cmd([[highlight Normal ctermbg=Green guibg=#001000]])
+      vim.cmd([[highlight Normal ctermbg=Green guibg=#001900]])
     end,
   },
 
@@ -219,7 +219,6 @@ require('lazy').setup({
 
 -- Set highlight on search
 vim.o.hlsearch = false
-
 -- Make line numbers default
 vim.wo.number = true
 
@@ -240,7 +239,13 @@ vim.o.undofile = true
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
 
+vim.o.smartindent = true
+vim.o.nu = true
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
 
@@ -253,6 +258,8 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+vim.o.updatetime = 50
+vim.opt.scroll=8
 
 -- [[ Basic Keymaps ]]
 
